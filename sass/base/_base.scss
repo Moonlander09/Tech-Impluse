@@ -1,0 +1,46 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; 
+}
+
+html {
+  font-size: 62.5%; 
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-x: hidden; 
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  color: $color-font;
+  background-color: $color-background;
+}
+
+.container{
+    max-width: 130rem;
+    margin: auto;
+}
+
+
+
+@media only screen and (max-width:68.75em){
+  html{
+    font-size: 56.25%;
+  }
+}
+
+@media only screen and (max-width:56.25em){
+  html{
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width:31.25em){
+  html{
+    font-size: 43.75%;
+  }
+}

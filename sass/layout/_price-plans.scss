@@ -1,0 +1,186 @@
+.plans{
+    padding: 12rem 0;
+  
+    &-title {
+      @include heading-title;
+  
+      &-text {
+        @include heading-text;
+      }
+  
+      &-subtext {
+        @include heading-subtext;
+      }
+    }
+    
+    &-box{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(60rem,1fr));
+        justify-items: center;
+        column-gap: 3rem;
+        overflow: hidden;
+
+        .plans-content{
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin: 5rem;
+            align-items: center;
+
+            .plans-heading{
+                font-size: 3rem;
+            }
+            .plans-text{
+                font-size: 1.8rem;
+                line-height: 1.6;
+            }
+            .plans-button{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                .plans-btn:first-child{
+                    background-color: $color-primary;
+                }
+                .plans-btn:nth-child(2){
+                    background-color: $color-secondary;
+                }
+                .plans-btn:last-child{
+                    background-color: $color-tertiary;
+                }
+            }
+
+        }
+        .plans-design{
+                 display: flex;
+                 gap: 5rem;
+                 align-items: center;
+                 overflow: hidden;
+                
+                 &-card{
+                margin: 5rem;
+                perspective: 150rem;
+                position: relative;
+                height: 50rem;
+                min-width: 50rem;
+                backface-visibility: hidden;
+                display: none;
+                
+                .card-side {
+                    height: 50rem;
+                    @include shadow;
+                    transition: all 0.8s ease;
+                    backface-visibility: hidden;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    border-radius: 45px;
+                    overflow: hidden;
+                    padding:2rem;
+                    transition: .8s ease-in;
+                }
+                
+
+
+                .front{
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3rem;
+                    align-items: center;
+                    justify-content: center;
+
+
+                    &-heading{
+                        font-size: 3rem;
+                        color: $color-font-heading;
+                    }
+                    .icon{
+                        width: 8rem;
+                        height:8rem;
+                        .user-icon{
+                            width: 100%;
+                            height: 100%;
+                            fill: $color-font-heading;
+                        }
+                    }
+                    ul{
+                        list-style: none;
+                        font-size: 1.8rem;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.5rem;
+
+                        .list{
+                            text-decoration: line-through;
+                            color: #999;
+                        }
+                    }
+                  }
+                .back{
+                      transform: rotateY(180deg);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 2rem;
+
+                    span{
+                        color: $color-font-heading;
+                        font-size: 4.5rem;
+                    }
+                    .purchase-btn{
+                        color: $color-background;
+                background-color: $color-font-heading;
+                transition: .3s;
+                    }
+                    .purchase-btn:hover{
+                        color: $color-font-heading;
+                        background-color: $color-background;
+                        box-shadow: inset 0 0 0 2px $color-font-heading;
+                    }
+                  }
+
+
+            }
+
+            &-card:hover .front{
+                transform: rotateY(-180deg);
+            }
+            &-card:hover .back{
+                transform: rotateY(0);
+            }
+
+            &-card-active{
+                display: block;
+            }
+            &-card-1{
+                .card-side{
+                background-color: lighten($color-primary,35%);
+            }
+            
+           }
+            &-card-2{
+                .card-side{
+                    background-color: lighten($color-secondary,45%);
+                }
+            }
+            &-card-3{
+                .card-side{
+                    background-color: lighten($color-tertiary,30%);
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width:56.25em){
+    .plans{
+        &-box{
+
+            grid-template-columns: repeat(auto-fit, minmax(45rem,1fr));
+        }
+    }
+  }

@@ -1,0 +1,54 @@
+
+.header{
+    padding: 12rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60rem,1fr));
+    align-items: center;
+    row-gap: 4rem;
+    &-text{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+        
+        &-title{
+            font-size: 4.5rem;
+            color: #002554;
+            line-height: 1.4;
+        }
+        &-subtitle{
+            font-size: 2rem;
+            line-height: 1.8;
+        }
+
+    }
+    &-btn{
+        color: $color-background;
+        background-color: $color-font-heading;
+        transition: .3s;
+        
+    }
+    &-btn:hover{
+        color: $color-font-heading;
+        background-color: $color-background;
+        box-shadow: inset 0 0 0 2px $color-font-heading;
+    }
+    &-img{
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media only screen and (max-width:81.25em){
+    .header{
+        padding:12rem 5rem;
+    }
+}
+@media only screen and (max-width:31.25em){
+    .header{
+        grid-template-columns: repeat(auto-fit, minmax(45rem,1fr));
+    }
+  }

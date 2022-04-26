@@ -1,0 +1,60 @@
+.about {
+    padding: 12rem 0;
+  
+    &-title {
+      @include heading-title;
+  
+      &-text {
+        @include heading-text;
+      }
+  
+      &-subtext {
+        @include heading-subtext;
+      }
+    }
+  
+    &-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+      column-gap: 4rem;
+      row-gap: 6rem;
+  
+      &-img{
+          img{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+          }
+      }
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 3rem;
+        padding: 4rem;
+        border-radius: 20px;
+
+  
+        &-text{
+            font-size: 2rem;
+            line-height: 1.6;
+
+        }
+
+        .about-btn{
+                color: $color-background;
+                background-color: $color-font-heading;
+                transition: .3s;
+        }
+
+        .about-btn:hover{
+            color: $color-font-heading;
+            background-color: $color-background;
+            box-shadow: inset 0 0 0 2px $color-font-heading;
+        }
+
+      }
+    }
+  }

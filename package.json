@@ -1,0 +1,14 @@
+{
+  "name": "tech-impulse",
+  "version": "1.0.0",
+  "description": "A modern way to handle your data.",
+  "main": "script.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "MoonLander",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}

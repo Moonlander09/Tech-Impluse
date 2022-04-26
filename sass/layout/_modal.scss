@@ -1,0 +1,89 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45rem;
+    background-color: $color-background;
+    @include shadow;
+    border-radius: 45px;
+    padding: 5rem 6rem;
+    z-index: 1000;
+    transition: all 0.5s;
+
+    &__header {
+        font-size: 3.25rem;
+        margin-bottom: 4.5rem;
+        line-height: 1.5;
+      }
+
+      &__form{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 3rem;
+
+          input{
+              width: 100%;
+              padding: 2rem;
+              font-family: inherit;
+              font-size: 2rem;
+              font-weight: 500;
+              background: rgba(220, 228, 231, 0.3);
+              border: #333;
+              outline: none;
+              border-radius: 45px;
+              transition: .3s;
+
+              &:focus{
+                outline: 0;
+                border: lighten($color-font-heading,80%);
+                box-shadow: $color-font-heading 0px 7px 29px 0px, 0 0 0 4px lighten($color-font-heading,25%);
+              }
+          }
+          .next-btn{
+            color: $color-background;
+            background-color: $color-font-heading;
+            transition: .3s;
+
+            &:hover{
+                color: $color-font-heading;
+        background-color: $color-background;
+        box-shadow: inset 0 0 0 2px $color-font-heading;
+            }
+          }
+      }
+      .close-btn {
+        font-family: inherit;
+        color: inherit;
+        position: absolute;
+        top: 3rem;
+        right: 6rem;
+        font-size: 6rem;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+  }
+
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    transition: all 0.5s;
+  }
+
+  .hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  

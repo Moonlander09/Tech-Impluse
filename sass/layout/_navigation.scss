@@ -1,0 +1,155 @@
+.section-nav{
+    
+    box-shadow: rgba(100, 100, 111, .5) 0px 7px 29px 0px;
+    position: relative;
+}
+
+.nav{
+    display: flex;
+    padding: 2rem 0;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-logo{
+    height: 100px;
+}
+.nav-logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+.nav-link:link,.nav-link:visited{
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+    color: #666;
+    font-size: 2rem;
+}
+.nav-link:hover{
+    color: $color-font-heading;
+}
+
+.nav-links .active-link{
+    color: $color-font-heading;
+}
+
+.nav-item-pos{
+    position: relative;
+}
+.drop-menu{
+    display: none;
+}
+.drop-menu ul{
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.drop-menu ul li{
+    
+    cursor: pointer;
+}
+
+.nav-item-pos:hover .drop-menu{
+    top: 100%;
+    left: -30%;
+    position:absolute;
+    display: block;
+    @include shadow;
+    padding: 2rem;
+    border-radius: 5px;
+    color: #666;
+    width: 20rem;
+    background-color: $color-background;
+
+    ul li:hover{
+        color:$color-font-heading;
+    }
+}
+
+
+.nav-style{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    display: none;
+    
+}
+.nav-line{
+    background-color: $color-font-heading;
+    width: 100%;
+    height: 4px;
+    position: relative;
+    transition: .3s ease-in;
+    border-radius: 25px;
+}
+.nav-line::before,.nav-line::after{
+    content: '';
+    width: 100%;
+    height: 4px;
+    border-radius: 25px;
+    position: absolute;
+    background-color: $color-font-heading;
+    transition: .3s ease-in;
+
+}
+.nav-line::before{
+top: -1.5rem;
+}
+.nav-line::after{
+    top: 1.5rem;
+}
+
+.nav-open .nav-line {   
+    background: transparent;
+  }
+  .nav-open .nav-line::before{
+    transform: rotate(315deg) ;
+    top: 0;
+  }
+  .nav-open .nav-line::after {
+    transform: rotate(-315deg);
+    top: 0;
+  }
+
+
+  @media only screen and (max-width:68.75em){
+    .nav{
+        padding:2rem;
+        &-style{
+            display: flex;
+        }
+        &bar{
+            .nav-links{
+                flex-direction: column;
+                position: absolute;
+                background-color: $color-background;
+                width: 100%;
+                top: 100%;
+                justify-content: center;
+                align-items: center;
+                left: 0;
+                border-bottom: 1px solid rgba(85, 85, 85, 0.2);
+               display: none;
+                
+            }
+            
+            .navbar-active{
+                padding: 2rem;
+                display: flex;
+            }
+        }
+    }
+}

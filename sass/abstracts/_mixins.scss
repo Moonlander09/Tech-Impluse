@@ -1,0 +1,21 @@
+@mixin heading-title{
+    text-align: center;
+width: 75%;
+margin: auto;
+margin-bottom: 10rem;
+}
+
+@mixin heading-text{
+    font-size: 3.5rem;
+    color: $color-font-heading;
+    margin-bottom: 3rem;
+}
+
+@mixin heading-subtext{
+    font-size: 2rem;
+    line-height: 1.6;
+}
+
+@mixin shadow{
+    box-shadow: rgba(100, 100, 111, .5) 0px 7px 29px 0px;
+}
